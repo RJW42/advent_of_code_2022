@@ -1,7 +1,7 @@
 mod days;
 
-use days::day_1 as d1;
+use days::day_2 as d2;
 
 fn main() {
-    d1::run("./src/input/day_1.txt");
+    d2::run("./src/input/day_2.txt").expect("Failed to run");
 }
