@@ -55,6 +55,7 @@ pub fn run(file_name: &str) -> std::io::Result<()> {
     /* Build file system */
     for l in reader.lines().skip(1) { /* Can skip first as is always cd / */
         let command = parse_terminal_line(&l?).unwrap();
+        command.print();
         
         match command {
             LS => () /* Nothing needed to be done */ ,
@@ -172,7 +173,7 @@ fn get_new_curr_dir(
     match cd_arg {
         GoRoot => 
             0,
-        GoBack =>
+        GoBack => 
             dirs.get(&curr_dir_id).unwrap().parent_id,
         GoFile(name) => 
             dirs.get(&curr_dir_id).unwrap().dirs.get(&name).unwrap().clone()       
