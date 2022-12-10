@@ -8,10 +8,12 @@ use days::day_5 as d5;
 use days::day_6 as d6;
 use days::day_7 as d7;
 use days::day_8 as d8;
+use days::day_9 as d9;
+use days::day_10 as d10;
 
 
 fn main() {
-    let day = 8;
+    let day = 10;
 
     match day {
         1 => d1::run("./src/input/day_1.txt").expect("Failed to run"),
@@ -22,6 +24,8 @@ fn main() {
         6 => d6::run("./src/input/day_6.txt").expect("Failed to run"),
         7 => d7::run("./src/input/day_7.txt").expect("Failed to run"),
         8 => d8::run("./src/input/day_8.txt").expect("Failed to run"),
+        9 => d9::run("./src/input/day_9.txt").expect("Failed to run"),
+        10 => d10::run("./src/input/day_10.txt").expect("Failed to run"),
         _ => panic!(),
     }
 }
