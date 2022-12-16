@@ -15,10 +15,11 @@ use days::day_12 as d12;
 use days::day_13 as d13;
 use days::day_14 as d14;
 use days::day_15 as d15;
+use days::day_16 as d16;
 
 
 fn main() {
-    let day = 15;
+    let day = 16;
 
     match day {
         1 => d1::run("./src/input/day_1.txt").expect("Failed to run"),
@@ -36,6 +37,7 @@ fn main() {
         13 => d13::run("./src/input/day_13.txt").expect("Failed to run"),
         14 => d14::run("./src/input/day_14.txt").expect("Failed to run"),
         15 => d15::run("./src/input/day_15.txt").expect("Failed to run"),
+        16 => d16::run("./src/input/day_16.txt").expect("Failed to run"),
         _ => panic!(),
     }
 }
