@@ -49,7 +49,7 @@ fn part_one(graph: &Graph) {
     let mut open_valves = BitVec::from_elem(graph.nodes.len(), false);
     let mut score_map = HashMap::new();
 
-    let score = dfs_p1(
+    let score = dfs(
         graph, *graph.id_node_map.get(&0).unwrap(), 0, 30, &mut open_valves, &mut score_map
     );
 
@@ -60,7 +60,7 @@ fn part_two(graph: &Graph) {
     let mut open_valves = BitVec::from_elem(graph.nodes.len(), false);
     let mut score_map = HashMap::new();
 
-    dfs_p1(
+    dfs(
         graph, *graph.id_node_map.get(&0).unwrap(), 
         0, 26, &mut open_valves, &mut score_map
     );
@@ -86,7 +86,7 @@ fn no_overlap(b1: &BitVec, b2: &BitVec) -> bool {
     b1_c.none()
 }
 
-fn dfs_p1(
+fn dfs(
         graph: &Graph, current_node: NodeIndex, current_score: u32, 
         time_remaning: u32, open_valves: &mut BitVec, score_map: &mut HashMap<BitVec, u32>
 ) -> u32 {
@@ -106,7 +106,7 @@ fn dfs_p1(
         
         let time_remaning = (time_remaning - graph.get_distance(current_node, next_node).unwrap()) - 1;
         let aditional_score = time_remaning * graph.nodes[next_node].flow_rate;
-        let score = dfs_p1(
+        let score = dfs(
             graph, next_node, current_score + aditional_score, 
             time_remaning, open_valves, score_map
         );
