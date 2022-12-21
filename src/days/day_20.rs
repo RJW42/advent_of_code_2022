@@ -44,7 +44,7 @@ fn p2_mix(nodes: &mut Vec<Node>, decryption_key: i64, debug: bool ) {
     }
 
     for _ in 0..10 {
-        mix(nodes, false);
+        mix(nodes, debug);
     }
 }
 
