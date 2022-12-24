@@ -21,10 +21,13 @@ use days::day_18 as d18;
 use days::day_19 as d19;
 use days::day_20 as d20;
 use days::day_21 as d21;
+use days::day_22 as d22;
+use days::day_23 as d23;
+use days::day_24 as d24;
 
 
 fn main() {
-    let day = 21;
+    let day = 24;
 
     match day {
         1 => d1::run("./src/input/day_1.txt").expect("Failed to run"),
@@ -48,6 +51,9 @@ fn main() {
         19 => d19::run("./src/input/day_19.txt").expect("Failed to run"),
         20 => d20::run("./src/input/day_20.txt").expect("Failed to run"),
         21 => d21::run("./src/input/day_21.txt").expect("Failed to run"),
+        22 => d22::run("./src/input/day_22.txt").expect("Failed to run"),
+        23 => d23::run("./src/input/day_23.txt").expect("Failed to run"),
+        24 => d24::run("./src/input/day_24.txt").expect("Failed to run"),
         _ => panic!(),
     }
 }
